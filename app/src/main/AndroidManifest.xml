@@ -19,7 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Messages.Chat">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,7 +31,7 @@
         <activity android:name=".QR.DecoderActivity" />
         <activity android:name=".SearchResult" />
         <activity android:name=".Messages.MyMessages" />
-        <activity android:name=".Messages.Chat"></activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

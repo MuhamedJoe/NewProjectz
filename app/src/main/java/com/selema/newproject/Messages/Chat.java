@@ -23,6 +23,7 @@ import retrofit2.Response;
 
 public class Chat extends AppCompatActivity {
 
+    static final String TAG = Chat.class.getSimpleName();
     Context mContext;
 
     BaseApiService mApiService;
@@ -67,6 +68,7 @@ public class Chat extends AppCompatActivity {
 
                             List<Inbox> inbox = response.body().getInbox();
                             messages = inbox.get(position).getMessages();
+                            Log.i(TAG, "onResponse: " + messages.size());
                             mAdapter = new ChatAdapter(messages, inbox, senderphone);
                             recyclerView.setAdapter(mAdapter);
                             recyclerView.setLayoutManager(mLayoutManager);

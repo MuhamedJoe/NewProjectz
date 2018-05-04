@@ -1,0 +1,3 @@
+# Referenced at /home/selema/Pictures/NewProject/app/build/intermediates/manifests/full/debug/AndroidManifest.xml:19
+-keep class com.selema.newproject.MyApplication { <init>(...); }
+

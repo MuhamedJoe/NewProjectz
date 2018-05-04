@@ -3,6 +3,7 @@ package com.selema.newproject.Messages;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,8 @@ import java.util.List;
  */
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MyViewHolder> {
+
+    static final String TAG = ChatAdapter.class.getSimpleName();
 
     Context mContext;
     private List<Messages> messages;
@@ -70,9 +73,12 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
+
         Messages messag = messages.get(position);
 
+//        Toast.makeText(mContext, " messages.size() " + messages.size(), Toast.LENGTH_SHORT).show();
 
+        Log.i(TAG, "onBindViewHolder: " + messag.getMessageId());
         if (messag.getSenderID().equals(senderphone)) {
             holder.message_right.setVisibility(LinearLayout.VISIBLE);
             holder.message_right.setText(messag.getMessageContent());
